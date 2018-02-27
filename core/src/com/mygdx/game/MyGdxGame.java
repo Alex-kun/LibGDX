@@ -7,6 +7,8 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.mygdx.game.game.Game;
 
+// Este es el codigo que hara que el juego funcione, el cual cuando hara que se creen los objetos, y se eliminen con el dispose.
+
 public class MyGdxGame extends ApplicationAdapter {
 	SpriteBatch batch;
 	Texture img;
@@ -17,7 +19,7 @@ public class MyGdxGame extends ApplicationAdapter {
 	int I_ESTADO_MENU=1;
 	int iEstadoJuego=0;
 
-	// Elementos que vamos a utilizar para el pintado
+	// Elementos que vamos a utilizar
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
@@ -25,22 +27,22 @@ public class MyGdxGame extends ApplicationAdapter {
 		game = new Game();
 	}
 
-	// Bucle donde se pintan los elementos de forma constante
+	// Bucle donde se pintan los elementos
 	@Override
 	public void render () {
 
 		// Métodos de limpiado de la pantalla
 		Gdx.gl.glClearColor(1, 0, 0, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-		// Comienza el pintado y su preparación a través de Batch
+		// Pintado y su preparación a través de Batch
 		batch.begin();
-		// Leemos coordenadas Acceleration
+		// Coordenadas Acceleration
 		float accelX = Gdx.input.getAccelerometerX();
 		float accelY = Gdx.input.getAccelerometerY();
 		Gdx.app.log("GameMain", "--> "+accelY);
 		game.paint(batch,x,y);
 		batch.end();
-		// Sensores según coordenada
+		// Sensores
 		if(accelY>0){
 			x++;
 			x++;
@@ -67,7 +69,7 @@ public class MyGdxGame extends ApplicationAdapter {
 		}
 	}
 
-	// Método por el que se sabe cuando se cierra la app y para limpiar los elementos en memoria
+	// Método dispose que cierra y destruye los elementos
 	@Override
 	public void dispose () {
 		batch.dispose();

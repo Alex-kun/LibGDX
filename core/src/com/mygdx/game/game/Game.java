@@ -5,6 +5,8 @@ package com.mygdx.game.game;
  */
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
+//Este codigo es el que iniciara la pelota
+
 public class Game {
     Ball ball;
 

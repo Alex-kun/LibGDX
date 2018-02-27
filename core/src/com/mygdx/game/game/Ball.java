@@ -6,6 +6,8 @@ package com.mygdx.game.game;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
+//Este es el codigo de la pelota, que sera la imagen del juego que ira girando por la pantalla
+
 public class Ball {
     Texture image;
 
